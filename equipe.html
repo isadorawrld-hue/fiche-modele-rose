@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>Fiche de Rose · Équipe 🌹</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌹</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff7f9;--ink:#3b2731;--muted:#8d7480;--line:#f3dce5;--rose:#e0557e;--rose-d:#c63f69;--rose-l:#ffe3ec;--ok:#2fa877;--ok-l:#dff6ec;--warn:#e58a2e;--warn-l:#fff0de;--no:#d9545a;--no-l:#ffe2e3;--r:22px;--shadow:0 10px 30px -18px rgba(176,72,110,.35)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:120px}
+body{margin:0;font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);line-height:1.5;min-height:100vh;padding-bottom:40px}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(40rem 30rem at 0% -5%,#ffd9e6 0,transparent 60%),radial-gradient(35rem 28rem at 105% 10%,#efe2ff 0,transparent 60%),radial-gradient(40rem 30rem at 50% 110%,#ffe8d4 0,transparent 60%)}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px}
+.hero{padding:30px 4px 6px;text-align:center}
+.badge{display:inline-flex;gap:6px;align-items:center;background:#fff;border:1px solid var(--line);padding:6px 12px;border-radius:99px;font-size:13px;font-weight:600;color:var(--rose-d);box-shadow:var(--shadow)}
+h1{font-family:Fraunces,Georgia,serif;font-size:clamp(34px,8vw,50px);line-height:1.05;margin:14px 0 6px}
+h1 span{color:var(--rose)}
+.upd{color:var(--muted);font-size:14px;margin:0}
+.facts{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:16px 0 4px}
+.fact{background:#fff;border:1px solid var(--line);border-radius:14px;padding:8px 12px;font-size:14px;box-shadow:var(--shadow)}
+.fact b{display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.tools{display:flex;gap:8px;justify-content:center;margin-top:14px;flex-wrap:wrap}
+.btn{font:inherit;font-weight:700;font-size:14px;border-radius:14px;padding:10px 14px;cursor:pointer;border:1.5px solid var(--line);background:#fff;color:var(--ink)}
+.btn.main{background:linear-gradient(135deg,#ff7aa2,#e0557e 55%,#b86bff);border:0;color:#fff;box-shadow:0 10px 22px -10px #e0557e}
+.nav{position:sticky;top:0;z-index:20;background:rgba(255,247,249,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);margin:18px -16px 0;padding:10px 16px}
+.nav-in{max-width:760px;margin:0 auto;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
+.nav-in::-webkit-scrollbar{display:none}
+.nav a{flex:none;text-decoration:none;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:99px;padding:5px 10px;font-size:13px;font-weight:600;white-space:nowrap}
+section.card{background:#ffffffd9;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);margin:18px 0;padding:20px 18px 10px;position:relative;overflow:hidden}
+section.card::before{content:"";position:absolute;inset:0 0 auto 0;height:90px;background:linear-gradient(180deg,var(--tint) 0,transparent 100%);opacity:.75;pointer-events:none}
+.sec-head{position:relative;display:flex;gap:12px;align-items:center;margin-bottom:12px}
+.sec-emoji{flex:none;width:44px;height:44px;border-radius:14px;display:grid;place-items:center;font-size:23px;background:#fff;box-shadow:0 4px 14px -6px rgba(0,0,0,.18)}
+.sec-title{font-family:Fraunces,Georgia,serif;font-size:23px;margin:0}
+.row{position:relative;padding:10px 0;border-bottom:1px dashed var(--line)}
+.row:last-child{border-bottom:0}
+.lab{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.val{font-size:16px;white-space:pre-wrap;word-wrap:break-word}
+.empty{color:#c4aab6;font-style:italic;font-size:14px}
+.pets{display:grid;gap:10px}
+.pet,.anec{background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 14px}
+.pet b{font-size:16px}
+.anec-list{display:grid;gap:10px}
+.anec-h{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.num{flex:none;width:28px;height:28px;border-radius:9px;display:grid;place-items:center;font-weight:800;font-size:13px;background:var(--rose-l);color:var(--rose-d)}
+.tag{font-size:12px;font-weight:700;border-radius:99px;padding:3px 9px;background:#f3ecff;color:#7a4fc9}
+.tag.lit{background:#ffe1e8;color:#c63f69}
+.lims{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px}
+.lim{display:flex;justify-content:space-between;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 10px;font-size:14px;font-weight:600}
+.pill{flex:none;font-size:12px;font-weight:800;border-radius:99px;padding:3px 9px}
+.pill.ok{background:var(--ok-l);color:#1f7a55}.pill.avoir{background:var(--warn-l);color:#b0631a}.pill.non{background:var(--no-l);color:#b8343b}.pill.na{background:#f4eef1;color:var(--muted)}
+.state{text-align:center;padding:60px 16px;color:var(--muted)}
+.state .big{font-size:52px}
+.state h2{font-family:Fraunces,Georgia,serif;color:var(--ink);margin:10px 0 6px}
+.hidden{display:none!important}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);opacity:0;background:var(--ink);color:#fff;padding:11px 16px;border-radius:14px;font-size:14px;font-weight:600;transition:all .3s;pointer-events:none;z-index:40}
+.toast.on{opacity:1;transform:translateX(-50%)}
+@media print{.nav,.tools{display:none}body::before{display:none}section.card{break-inside:avoid;box-shadow:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <span class="badge">🌹 Sensual Aura · Équipe</span>
+    <h1>Fiche de <span>Rose</span></h1>
+    <p class="upd" id="upd">Chargement…</p>
+    <div class="facts" id="facts"></div>
+    <div class="tools hidden" id="tools">
+      <button class="btn main" type="button" id="copyBtn">📋 Copier toute la fiche</button>
+      <button class="btn" type="button" id="reloadBtn">🔄 Actualiser</button>
+      <button class="btn" type="button" id="printBtn">🖨️ PDF</button>
+    </div>
+  </header>
+  <nav class="nav hidden" id="nav"><div class="nav-in" id="navIn"></div></nav>
+  <main id="app"></main>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+(function(){
+"use strict";
+var SCHEMA = {"model": "Rose", "slug": "rose", "formName": "fiche-rose", "sections": [{"id": "essentiel", "emoji": "💗", "title": "L'essentiel", "tint": "#ffd9e4", "intro": "La base. Ce que l'équipe doit savoir par cœur.", "fields": [{"name": "prenom", "label": "Ton prénom", "type": "text", "required": true, "ph": "Rose"}, {"name": "pseudo", "label": "Ton pseudo de créatrice", "type": "text", "ph": "Le nom que voient les fans"}, {"name": "age", "label": "Ton âge", "type": "number", "required": true, "ph": "ex. 22", "min": 18, "max": 99}, {"name": "anniversaire", "label": "Ton anniversaire", "type": "text", "ph": "ex. 14 mars"}, {"name": "signe", "label": "Ton signe astro", "type": "select", "options": ["Bélier", "Taureau", "Gémeaux", "Cancer", "Lion", "Vierge", "Balance", "Scorpion", "Sagittaire", "Capricorne", "Verseau", "Poissons", "Je sais pas"]}, {"name": "ville", "label": "Ta ville (celle qu'on peut dire aux fans)", "type": "text", "ph": "ex. Lyon"}, {"name": "origine", "label": "D'où tu viens à la base", "type": "text", "ph": "Ville, région, pays"}, {"name": "taille", "label": "Ta taille", "type": "text", "ph": "ex. 1m65"}, {"name": "yeux_cheveux", "label": "Couleur des yeux et des cheveux", "type": "text", "ph": "ex. yeux verts, cheveux châtains longs"}, {"name": "tatouages", "label": "Tatouages / piercings (et leur histoire)", "type": "textarea", "rows": 3, "ph": "Où ils sont, ce qu'ils veulent dire…"}, {"name": "langues", "label": "Les langues que tu parles", "type": "text", "ph": "ex. français, un peu d'anglais"}]}, {"id": "vie", "emoji": "🏠", "title": "Ta vie", "tint": "#ffe6cf", "intro": "Ton quotidien. Pour que l'équipe raconte TA vie, pas une vie inventée.", "fields": [{"name": "metier", "label": "Études / boulot (ce qu'on peut dire aux fans)", "type": "textarea", "rows": 2, "ph": "ex. j'ai fait une licence de psycho, j'ai bossé en bar…"}, {"name": "logement", "label": "Tu vis…", "type": "chips", "options": ["Seule", "En coloc", "Chez mes parents", "Avec quelqu'un", "Autre"]}, {"name": "famille", "label": "Ta famille (frères, sœurs…)", "type": "textarea", "rows": 2, "ph": "ex. un grand frère, une petite sœur de 15 ans…"}, {"name": "journee_type", "label": "Ta journée type", "type": "textarea", "rows": 4, "ph": "Réveil, café, salle, séries, soirées…"}, {"name": "horaires", "label": "Tu te lèves et te couches vers quelle heure ?", "type": "text", "ph": "ex. lève 10h, couche 2h"}, {"name": "vehicule", "label": "Voiture, scooter, permis ?", "type": "text", "ph": "ex. permis, une petite Clio rouge"}, {"name": "habits_maison", "label": "Ta tenue préférée à la maison", "type": "text", "ph": "ex. grand t-shirt et culotte, jogging…"}]}, {"id": "animaux", "emoji": "🐾", "title": "Tes animaux", "tint": "#d9f3e6", "intro": "Les fans adorent. Prénom, caractère, bêtises : tout compte.", "fields": [{"name": "a_animaux", "label": "Tu as des animaux ?", "type": "chips", "options": ["Oui", "Non"]}, {"name": "animaux", "label": "Tes animaux", "type": "animals", "showIf": {"a_animaux": "Oui"}}, {"name": "animal_reve", "label": "Ton animal préféré / celui que tu rêves d'avoir", "type": "text", "ph": "ex. un chat sphynx"}]}, {"id": "aime", "emoji": "✨", "title": "Ce que t'aimes", "tint": "#e8defd", "intro": "Plus c'est précis, plus l'équipe peut créer du lien avec les fans.", "fields": [{"name": "hobbies", "label": "Tes hobbies / passions", "type": "textarea", "rows": 3, "ph": "ex. danse, dessin, mangas, cuisine…"}, {"name": "sport", "label": "Ton sport", "type": "text", "ph": "ex. salle 4x par semaine, yoga…"}, {"name": "musique", "label": "Ta musique, tes artistes", "type": "textarea", "rows": 2, "ph": "Ce que tu écoutes en boucle"}, {"name": "series_films", "label": "Tes séries / films / animés préférés", "type": "textarea", "rows": 2, "ph": "ex. Euphoria, Harry Potter…"}, {"name": "plat", "label": "Ton plat préféré", "type": "text", "ph": "ex. les sushis"}, {"name": "boisson", "label": "Ta boisson / ton cocktail", "type": "text", "ph": "ex. mojito, ice tea pêche"}, {"name": "food_guilty", "label": "Ton plaisir coupable bouffe", "type": "text", "ph": "ex. Nutella à la cuillère à 2h du mat"}, {"name": "voyages", "label": "Les pays / villes que t'as visités", "type": "textarea", "rows": 2, "ph": "ex. Espagne, Bali, Marrakech…"}, {"name": "voyage_reve", "label": "Ton voyage de rêve", "type": "text", "ph": "ex. Japon"}, {"name": "style", "label": "Ton style / tes marques", "type": "text", "ph": "ex. streetwear, robes, Zara, Nike…"}, {"name": "parfum_couleur", "label": "Ton parfum et ta couleur préférée", "type": "text", "ph": "ex. Libre d'YSL, le rose"}, {"name": "jeux", "label": "Jeux vidéo / jeux de société", "type": "text", "ph": "ex. Mario Kart, Uno…"}, {"name": "petits_plaisirs", "label": "Tes petits plaisirs du quotidien", "type": "textarea", "rows": 2, "ph": "ex. bain chaud, bougies, grasse mat…"}, {"name": "fait_rire", "label": "Ce qui te fait rire", "type": "text", "ph": "ex. les vidéos de chats, l'humour noir"}]}, {"id": "aimepas", "emoji": "🙅‍♀️", "title": "Ce que t'aimes pas", "tint": "#ffdcd6", "intro": "Ce qui te saoule. Ça évite que l'équipe dise un truc qui te ressemble pas.", "fields": [{"name": "deteste", "label": "Ce que tu détestes dans la vie", "type": "textarea", "rows": 2, "ph": "ex. les gens en retard, le froid…"}, {"name": "mec_relou", "label": "Ce qui te saoule chez un mec", "type": "textarea", "rows": 2, "ph": "ex. les mecs qui se vantent, qui répondent en 3 lettres…"}, {"name": "bouffe_deteste", "label": "La bouffe que tu supportes pas", "type": "text", "ph": "ex. les olives"}]}, {"id": "perso", "emoji": "🧠", "title": "Ta personnalité", "tint": "#d6ecff", "intro": "Qui tu es vraiment. C'est la base de ta persona.", "fields": [{"name": "trois_mots", "label": "Toi en 3 mots", "type": "text", "ph": "ex. drôle, têtue, câline"}, {"name": "intro_extra", "label": "Tu es plutôt…", "type": "chips", "options": ["Introvertie", "Extravertie", "Entre les deux"]}, {"name": "qualites", "label": "Tes qualités", "type": "textarea", "rows": 2, "ph": ""}, {"name": "defauts", "label": "Tes défauts (les mignons aussi)", "type": "textarea", "rows": 2, "ph": "ex. jalouse, toujours en retard…"}, {"name": "amis_disent", "label": "Ce que tes potes disent de toi", "type": "textarea", "rows": 2, "ph": ""}, {"name": "humour", "label": "Ton humour", "type": "text", "ph": "ex. second degré, taquine, humour noir"}, {"name": "talent", "label": "Un talent caché", "type": "text", "ph": "ex. je fais le grand écart"}, {"name": "peurs", "label": "Tes peurs (même les petites)", "type": "text", "ph": "ex. les araignées, l'avion"}, {"name": "reves", "label": "Tes rêves / objectifs", "type": "textarea", "rows": 2, "ph": "ex. ouvrir mon salon, vivre au soleil…"}]}, {"id": "love", "emoji": "💘", "title": "Love & mecs", "tint": "#ffd6ec", "intro": "Ton type, tes codes. Ça aide à faire sentir chaque fan unique.", "fields": [{"name": "type_mec", "label": "Ton type de mec", "type": "textarea", "rows": 2, "ph": "Physique, caractère, style…"}, {"name": "regarde", "label": "La première chose que tu regardes chez un mec", "type": "text", "ph": "ex. les mains, le sourire"}, {"name": "date_ideal", "label": "Ton date idéal", "type": "textarea", "rows": 2, "ph": "ex. resto japonais puis balade de nuit"}, {"name": "red_flags", "label": "Tes red flags", "type": "text", "ph": ""}, {"name": "love_language", "label": "Ce qui te fait fondre", "type": "chips", "options": ["Les mots doux", "Les cadeaux", "Le temps passé ensemble", "Les câlins", "Les petites attentions"]}, {"name": "statut_fans", "label": "Qu'est-ce qu'on dit aux fans sur ta situation amoureuse ?", "type": "text", "ph": "ex. célibataire, je cherche l'amour"}]}, {"id": "coquin", "emoji": "🔥", "title": "Côté coquin", "tint": "#ffd3cf", "intro": "Ça reste entre toi et l'agence. Sois honnête : c'est ce qui fait vendre sans jamais te forcer.", "fields": [{"name": "aime_lit", "label": "Ce que tu aimes au lit", "type": "textarea", "rows": 3, "ph": ""}, {"name": "fantasmes", "label": "Tes fantasmes", "type": "textarea", "rows": 3, "ph": ""}, {"name": "positions", "label": "Tes positions préférées", "type": "text", "ph": ""}, {"name": "zones", "label": "Tes zones sensibles", "type": "text", "ph": ""}, {"name": "lingerie", "label": "Ta lingerie préférée (style, couleur)", "type": "text", "ph": "ex. dentelle noire, ensembles rouges"}, {"name": "excite", "label": "Ce qui t'excite chez un mec / dans un message", "type": "textarea", "rows": 2, "ph": ""}, {"name": "jamais", "label": "Ce que tu ne feras JAMAIS", "type": "textarea", "rows": 2, "ph": ""}, {"name": "limites", "label": "Tes limites de contenu", "type": "limits", "items": ["Lingerie", "Topless (seins nus)", "Nu intégral", "Visage visible sur le contenu", "Vidéos solo explicites", "Jouets", "Contenu avec partenaire", "Fétiche pieds", "Vidéos perso (dédicaces, prénom du fan)", "Vocaux", "Lives", "Appels vidéo avec des fans"]}, {"name": "limites_details", "label": "Précisions sur tes limites", "type": "textarea", "rows": 2, "ph": "ex. OK partenaire mais seulement avec mon copain"}]}, {"id": "anecdotes", "emoji": "📖", "title": "Tes anecdotes", "tint": "#fff0b8", "intro": "Le plus important. Minimum 10, et plus t'en mets, mieux c'est. Des vraies histoires : dans la vie, en soirée, au lit, en voyage, gênantes… Raconte comme à une copine.", "fields": [{"name": "anecdotes", "label": "Tes anecdotes", "type": "anecdotes", "min": 10, "minChars": 25, "cats": ["Vie", "Au lit", "Soirée", "Voyage", "Enfance", "Amour", "Gênante", "Boulot / école"], "ideas": ["La fois la plus gênante de ta vie", "Le lieu le plus fou où tu l'as fait", "Ta plus grosse soirée", "Ton pire date", "Un souvenir d'enfance qui te fait rire", "Une galère en voyage", "Ton premier bisou", "Une fois où t'as été chaude au pire moment", "Un truc que personne ne sait sur toi", "Une fois où t'as ri jusqu'à pleurer", "Ta pire honte avec un mec", "Un délire avec tes potes", "Ta première fois (comme tu veux la raconter)", "Un truc fou que t'as fait sur un coup de tête", "Une anecdote avec ton animal"]}]}, {"id": "parler", "emoji": "💬", "title": "Ta façon de parler", "tint": "#d4f1f4", "intro": "Pour que l'équipe écrive EXACTEMENT comme toi.", "fields": [{"name": "exemple_msg", "label": "Un mec t'écrit « salut ça va ? ». Tu réponds quoi, exactement comme tu l'écrirais ?", "type": "textarea", "rows": 2, "ph": "Écris comme sur ton tel, avec tes fautes et tes emojis"}, {"name": "emojis", "label": "Tes emojis préférés", "type": "text", "ph": "ex. 😂🥹🙈💕"}, {"name": "abreviations", "label": "Tu écris en abrégé ? (mdr, tkt, jsp…)", "type": "text", "ph": "ex. oui : mdr, ptdr, jsp, tqt"}, {"name": "expressions", "label": "Tes expressions / tics de langage", "type": "text", "ph": "ex. « genre », « en vrai », « je suis morte »"}, {"name": "surnoms", "label": "Comment tu appelles les mecs que t'aimes bien", "type": "text", "ph": "ex. bébé, mon cœur, chéri"}, {"name": "vocaux", "label": "Les vocaux, t'aimes ?", "type": "chips", "options": ["J'adore", "Ça dépend", "Pas trop"]}, {"name": "mots_jamais", "label": "Des mots que tu ne dis JAMAIS", "type": "text", "ph": "ex. « bisous », « mon loulou »"}]}, {"id": "regles", "emoji": "🛡️", "title": "Tes règles", "tint": "#e3e8ff", "intro": "Ta protection. Ce qu'on ne doit jamais dire ni faire.", "fields": [{"name": "persona", "label": "Comment tu veux que les fans te voient", "type": "textarea", "rows": 2, "ph": "ex. la copine marrante mais super sexy"}, {"name": "sujets_interdits", "label": "Les sujets interdits", "type": "textarea", "rows": 2, "ph": "ex. ma famille, la politique, mon ex"}, {"name": "ne_jamais_reveler", "label": "Les infos à ne JAMAIS donner aux fans", "type": "textarea", "rows": 2, "ph": "ex. mon nom de famille, ma vraie adresse"}]}, {"id": "reseaux", "emoji": "📱", "title": "Tes réseaux", "tint": "#ffe0f0", "intro": "Tes @ pour qu'on puisse tout connecter.", "fields": [{"name": "instagram", "label": "Instagram", "type": "text", "ph": "@"}, {"name": "tiktok", "label": "TikTok", "type": "text", "ph": "@"}, {"name": "snapchat", "label": "Snapchat", "type": "text", "ph": "@"}, {"name": "telegram", "label": "Telegram", "type": "text", "ph": "@"}, {"name": "mym_of", "label": "MYM / OnlyFans", "type": "text", "ph": "Lien ou pseudo"}, {"name": "whatsapp", "label": "Ton WhatsApp (pour l'agence)", "type": "text", "ph": "+33…"}]}, {"id": "bonus", "emoji": "🎁", "title": "Le mot de la fin", "tint": "#ffe9d6", "intro": "Tout ce qu'on a oublié et qui fait TOI.", "fields": [{"name": "bonus", "label": "Balance tout", "type": "textarea", "rows": 5, "ph": "Petits secrets, manies, souvenirs, ce qui te rend unique…"}]}]};
+function $(id){ return document.getElementById(id); }
+function h(tag, attrs, kids){ var el=document.createElement(tag); if(attrs) for(var k in attrs){ var v=attrs[k]; if(v==null||v===false) continue; if(k==="class") el.className=v; else if(k==="text") el.textContent=v; else el.setAttribute(k,v);} (kids||[]).forEach(function(c){ if(c) el.appendChild(typeof c==="string"?document.createTextNode(c):c); }); return el; }
+function trim(v){ return String(v==null?"":v).trim(); }
+function toast(m){ var t=$("toast"); t.textContent=m; t.classList.add("on"); setTimeout(function(){ t.classList.remove("on"); },2600); }
+function getKey(){ var m = /(?:^|[#&])k=([^&]+)/.exec(location.hash || ""); try { return m ? decodeURIComponent(m[1]) : ""; } catch(e) { return ""; } }
+var current = null;
+
+function showState(emoji, title, text){
+  $("app").innerHTML = ""; $("tools").classList.add("hidden"); $("nav").classList.add("hidden"); $("facts").innerHTML = "";
+  $("app").appendChild(h("div",{class:"state"},[h("div",{class:"big",text:emoji}),h("h2",{text:title}),h("p",{text:text})]));
+}
+function load(){
+  var KEY = getKey();
+  if (!KEY){ $("upd").textContent=""; showState("🔒","Lien incomplet","Demande le lien équipe complet à Awen."); return; }
+  $("upd").textContent = "Chargement…";
+  var ctrl = ("AbortController" in window) ? new AbortController() : null; var to = setTimeout(function(){ if(ctrl) ctrl.abort(); }, 15000);
+  fetch("/api/fiche?m=" + encodeURIComponent(SCHEMA.slug), {headers:{"X-Key":KEY}, cache:"no-store", signal: ctrl?ctrl.signal:undefined})
+    .then(function(r){ return r.json().then(function(j){ return {status:r.status, j:j}; }); })
+    .then(function(x){
+      if (x.status === 401){ $("upd").textContent=""; showState("🔒","Lien invalide","Demande le bon lien équipe à Awen."); return; }
+      if (x.status !== 200) throw new Error("HTTP "+x.status);
+      if (!x.j.fiche){ $("upd").textContent=""; showState("⏳", SCHEMA.model + " n'a pas encore envoyé sa fiche","Dès qu'elle clique sur Envoyer, tout apparaît ici. Clique sur Actualiser."); $("tools").classList.remove("hidden"); $("copyBtn").classList.add("hidden"); $("printBtn").classList.add("hidden"); return; }
+      current = x.j.fiche; render(current);
+    })
+    .catch(function(){ $("upd").textContent=""; showState("📶","Impossible de charger","Vérifie ta connexion puis clique sur Actualiser."); $("tools").classList.remove("hidden"); })
+    .then(function(){ clearTimeout(to); });
+}
+function animalsBlock(st){
+  if ((st.f||{}).a_animaux === "Non") return h("div",{class:"val",text:"Pas d'animaux"});
+  var list = (st.animals||[]).filter(function(a){ return a && (trim(a.esp)||trim(a.nom)||trim(a.age)||trim(a.info)); });
+  if (!list.length) return null;
+  return h("div",{class:"pets"}, list.map(function(a){
+    var head = [trim(a.nom), trim(a.esp), trim(a.age) ? trim(a.age) + (/^\d+$/.test(trim(a.age)) ? " ans" : "") : ""].filter(Boolean).join(" · ");
+    return h("div",{class:"pet"},[h("b",{text:"🐾 " + head}), trim(a.info) ? h("div",{class:"val",text:trim(a.info)}) : null]);
+  }));
+}
+function limitsBlock(f, st){
+  var L = {ok:["ok","OK"], avoir:["avoir","À voir"], non:["non","Non"]};
+  return h("div",{class:"lims"}, f.items.map(function(it){ var v = L[(st.lim||{})[it]] || ["na","?"];
+    return h("div",{class:"lim"},[h("span",{text:it}), h("span",{class:"pill "+v[0], text:v[1]})]); }));
+}
+function anecBlock(st){
+  var list = (st.anec||[]).filter(function(a){ return a && trim(a.t); });
+  if (!list.length) return null;
+  return h("div",{class:"anec-list"}, list.map(function(a,i){
+    return h("div",{class:"anec"},[h("div",{class:"anec-h"},[h("span",{class:"num",text:String(i+1)}), a.cat ? h("span",{class:"tag"+(a.cat==="Au lit"?" lit":""),text:a.cat}) : null]), h("div",{class:"val",text:trim(a.t)})]);
+  }));
+}
+function render(doc){
+  var st = doc.state || {}, F = st.f || {};
+  $("upd").textContent = "Mise à jour le " + new Date(doc.savedAt).toLocaleString("fr-FR",{dateStyle:"long", timeStyle:"short"});
+  var facts = $("facts"); facts.innerHTML = "";
+  [["Prénom","prenom"],["Âge","age"],["Ville","ville"],["Signe","signe"],["Pseudo","pseudo"]].forEach(function(p){
+    var v = trim(F[p[1]]); if (v) facts.appendChild(h("div",{class:"fact"},[h("b",{text:p[0]}), (p[1]==="age"? v+" ans" : v)]));
+  });
+  var app = $("app"); app.innerHTML = ""; var nav = $("navIn"); nav.innerHTML = "";
+  SCHEMA.sections.forEach(function(s){
+    var card = h("section",{class:"card", id:"s-"+s.id, style:"--tint:"+s.tint},[h("div",{class:"sec-head"},[h("div",{class:"sec-emoji",text:s.emoji}), h("h2",{class:"sec-title",text:s.title})])]);
+    var filled = 0;
+    s.fields.forEach(function(f){
+      if (f.name === "a_animaux") return;
+      var content = null;
+      if (f.type === "animals") content = animalsBlock(st);
+      else if (f.type === "limits") content = limitsBlock(f, st);
+      else if (f.type === "anecdotes") content = anecBlock(st);
+      else { var v = trim(F[f.name]); if (v) content = h("div",{class:"val",text:v}); }
+      if (content) filled++;
+      card.appendChild(h("div",{class:"row"},[h("div",{class:"lab",text: f.type==="anecdotes" ? (st.anec||[]).filter(function(a){return a&&trim(a.t);}).length + " anecdotes" : f.label}), content || h("div",{class:"empty",text:"Pas répondu"})]));
+    });
+    app.appendChild(card);
+    nav.appendChild(h("a",{href:"#s-"+s.id,text:s.emoji+" "+s.title}));
+  });
+  $("tools").classList.remove("hidden"); $("copyBtn").classList.remove("hidden"); $("printBtn").classList.remove("hidden"); $("nav").classList.remove("hidden");
+}
+function copyText(txt){
+  function fb(){ var t=document.createElement("textarea"); t.value=txt; t.style.position="fixed"; t.style.top="-1000px"; document.body.appendChild(t); t.select(); var ok=false; try{ ok=document.execCommand("copy"); }catch(e){} document.body.removeChild(t); return ok; }
+  if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(txt).then(function(){return true;},function(){return fb();});
+  return Promise.resolve(fb());
+}
+$("copyBtn").addEventListener("click", function(){ if(!current) return; copyText((current.payload||{}).fiche_complete || "").then(function(ok){ toast(ok ? "Fiche copiée ✓" : "Copie impossible"); }); });
+$("reloadBtn").addEventListener("click", load);
+$("printBtn").addEventListener("click", function(){ window.print(); });
+window.addEventListener("hashchange", load);
+window.__equipe = {load:load};
+load();
+})();
+</script>
+</body>
+</html>
