@@ -3,8 +3,10 @@
 // GET  /api/fiche?m=rose  (X-Key)   -> renvoie la dernière fiche (lien équipe)
 import { getStore } from "@netlify/blobs";
 
-// La clé du lien équipe vit UNIQUEMENT dans la variable d'environnement Netlify VIEW_KEY (jamais dans le code).
-const VIEW_KEY = () => process.env.VIEW_KEY || "";
+// Clé du lien équipe : jamais dans le code. Générée par le serveur au premier appel
+// de GET /api/fiche?m=rose&setup=1 (une seule fois, verrouillé ensuite) et gardée dans Netlify Blobs.
+import { randomBytes } from "node:crypto";
+async function viewKey(st) { return process.env.VIEW_KEY || (await st.get("config/viewkey", { type: "text" })) || ""; }
 const MODELS = ["rose"];
 const MAX_BYTES = 400_000;
 
@@ -45,11 +47,18 @@ export default async (req) => {
   }
 
   if (req.method === "GET") {
-    const expected = VIEW_KEY();
+    const st = store();
+    let expected = await viewKey(st);
+    if (url.searchParams.get("setup") === "1") {
+      if (expected) return json(403, { error: "deja_configure" });
+      const k = randomBytes(16).toString("hex");
+      await st.set("config/viewkey", k);
+      return json(200, { key: k });
+    }
     if (!expected) return json(503, { error: "cle_non_configuree" });
     const key = req.headers.get("x-key") || "";
     if (key !== expected) return json(401, { error: "lien_invalide" });
-    const doc = await store().get(`${m}/latest`, { type: "json" });
+    const doc = await st.get(`${m}/latest`, { type: "json" });
     return json(200, { fiche: doc || null });
   }
 
