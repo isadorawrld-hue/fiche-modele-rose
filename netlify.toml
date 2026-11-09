@@ -11,3 +11,16 @@
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"
     Referrer-Policy = "no-referrer"
+
+[[headers]]
+  for = "/equipe/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    Referrer-Policy = "no-referrer"
+    Cache-Control = "no-store"
+
+# Lien court équipe : /equipe/CLE affiche la page équipe (la clé est lue dans l'adresse)
+[[redirects]]
+  from = "/equipe/*"
+  to = "/equipe.html"
+  status = 200

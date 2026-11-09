@@ -88,7 +88,25 @@ function $(id){ return document.getElementById(id); }
 function h(tag, attrs, kids){ var el=document.createElement(tag); if(attrs) for(var k in attrs){ var v=attrs[k]; if(v==null||v===false) continue; if(k==="class") el.className=v; else if(k==="text") el.textContent=v; else el.setAttribute(k,v);} (kids||[]).forEach(function(c){ if(c) el.appendChild(typeof c==="string"?document.createTextNode(c):c); }); return el; }
 function trim(v){ return String(v==null?"":v).trim(); }
 function toast(m){ var t=$("toast"); t.textContent=m; t.classList.add("on"); setTimeout(function(){ t.classList.remove("on"); },2600); }
-function getKey(){ var m = /(?:^|[#&])k=([^&]+)/.exec(location.hash || ""); try { return m ? decodeURIComponent(m[1]) : ""; } catch(e) { return ""; } }
+var STORE_KEY = "fiche_equipe_cle_" + SCHEMA.slug;
+function store(k){ try { if (k) localStorage.setItem(STORE_KEY, k); else localStorage.removeItem(STORE_KEY); } catch(e) {} }
+function stored(){ try { return localStorage.getItem(STORE_KEY) || ""; } catch(e) { return ""; } }
+function keyFrom(s){
+  s = String(s || "");
+  var m = /\/equipe\/([0-9a-fA-F]{16,64})/.exec(s) || /[#?&]k=([0-9a-fA-F]{16,64})/.exec(s) || /^\s*([0-9a-fA-F]{16,64})\s*$/.exec(s);
+  return m ? m[1].toLowerCase() : "";
+}
+// La clé peut venir du lien court (/equipe/CLE), de #k=, de ?k=, ou de la mémoire du navigateur.
+function getKey(){ var k = keyFrom(location.pathname) || keyFrom(location.hash) || keyFrom(location.search); if (k) { store(k); return k; } return stored(); }
+function askKey(title, text){
+  showState("🔒", title, text);
+  var inp = h("input",{type:"text", id:"keyInput", placeholder:"Colle ici le lien qu'Awen t'a envoyé", autocomplete:"off", style:"width:100%;max-width:420px;font:inherit;font-size:16px;padding:12px 14px;border-radius:14px;border:1.5px solid var(--line);margin:14px 0 10px;background:#fff"});
+  var btn = h("button",{class:"btn main", type:"button", id:"keyBtn", text:"Ouvrir la fiche"});
+  var err = h("p",{id:"keyErr", style:"color:var(--no);font-weight:600;min-height:1.4em;margin:6px 0 0"});
+  function go(){ var k = keyFrom(inp.value); if (!k){ err.textContent = "Ce lien n'a pas la clé. Recopie-le en entier."; return; } store(k); try { history.replaceState(null, "", "/equipe.html"); } catch(e) {} load(); }
+  btn.addEventListener("click", go); inp.addEventListener("keydown", function(e){ if (e.key === "Enter") go(); });
+  $("app").querySelector(".state").appendChild(h("div",{},[inp, h("br"), btn, err]));
+}
 var current = null;
 
 function showState(emoji, title, text){
@@ -97,13 +115,13 @@ function showState(emoji, title, text){
 }
 function load(){
   var KEY = getKey();
-  if (!KEY){ $("upd").textContent=""; showState("🔒","Lien incomplet","Demande le lien équipe complet à Awen."); return; }
+  if (!KEY){ $("upd").textContent=""; askKey("Lien incomplet","Colle le lien équipe complet, une seule fois : ensuite cette page s\u2019ouvre toute seule sur ce téléphone."); return; }
   $("upd").textContent = "Chargement…";
   var ctrl = ("AbortController" in window) ? new AbortController() : null; var to = setTimeout(function(){ if(ctrl) ctrl.abort(); }, 15000);
   fetch("/api/fiche?m=" + encodeURIComponent(SCHEMA.slug), {headers:{"X-Key":KEY}, cache:"no-store", signal: ctrl?ctrl.signal:undefined})
     .then(function(r){ return r.json().then(function(j){ return {status:r.status, j:j}; }); })
     .then(function(x){
-      if (x.status === 401){ $("upd").textContent=""; showState("🔒","Lien invalide","Demande le bon lien équipe à Awen."); return; }
+      if (x.status === 401){ store(""); $("upd").textContent=""; askKey("Lien invalide","Ce lien ne marche pas. Colle le bon lien équipe envoyé par Awen."); return; }
       if (x.status !== 200) throw new Error("HTTP "+x.status);
       if (!x.j.fiche){ $("upd").textContent=""; showState("⏳", SCHEMA.model + " n'a pas encore envoyé sa fiche","Dès qu'elle clique sur Envoyer, tout apparaît ici. Clique sur Actualiser."); $("tools").classList.remove("hidden"); $("copyBtn").classList.add("hidden"); $("printBtn").classList.add("hidden"); return; }
       current = x.j.fiche; render(current);
